@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Link Transformer</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    input { width: 400px; padding: 5px; }
+    button { padding: 6px 12px; margin-left: 5px; }
+    a { display: block; margin-top: 15px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>Link Transformer</h2>
+  <p>Paste your link below, then click Transform.</p>
+
+  <input type="text" id="inputLink" placeholder="Paste link here" />
+  <button onclick="transform()">Transform</button>
+
+  <a id="outputLink" href="#" target="_blank"></a>
+
+  <script>
+    function transform() {
+      const input = document.getElementById("inputLink").value.trim();
+      if (!input) {
+        alert("Please paste a link first!");
+        return;
+      }
+
+      // 🔧 Example transformation:
+      // Replace "oldsite.com" with "newsite.com"
+      const newLink = input.replace("oldsite.com", "newsite.com");
+
+      const output = document.getElementById("outputLink");
+      output.href = newLink;
+      output.textContent = newLink;
+    }
+  </script>
+</body>
+</html>
